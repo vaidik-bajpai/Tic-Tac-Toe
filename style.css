@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Slab&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --BACKGROUND-COLOR: whitesmoke;
+    --SHADOW-COLOR: black;
+    --GRID-BORDER-COLOR: black;
+
+    --GRID-BORDER-WIDTH: 2px;
+    --GAME-BOARD-SIZE: 320px;
+    --GAME-BLOCK-SIZE: calc((var(--GAME-BOARD-SIZE))/3);
+}
+body{
+    background: var(--BACKGROUND-COLOR);
+    width: 100vw;
+    height: 100vh;
+    font-family: 'Roboto', sans-serif;
+}
+header{
+    width: 100%;
+    height: 80px;
+    display: grid;
+    place-content: center;
+    background: var(--BACKGROUND-COLOR);
+    box-shadow: 0 3px 5px -3px var(--SHADOW-COLOR); 
+    margin-bottom: 50px;
+}
+header h1{
+    font-size: 3rem;
+}
+main{
+    margin-top: 30px;
+    width: 400px;
+    margin: 0 auto;
+}
+.buttons{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    padding-top: 20px;
+}
+.cross, .circle{
+    appearance: none;
+    border: none;
+    background: none;
+    box-shadow: 0 0 3px black;
+    width: 100px;
+    height: 30px;
+    margin: 0 auto;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.playerMark{
+    border: 1px solid black;
+}
+.game-board{
+    display: grid;
+    grid-template-columns: repeat(3,var(--GAME-BLOCK-SIZE));
+    grid-template-rows: repeat(3, var(--GAME-BLOCK-SIZE));
+    margin: 20px auto;
+    text-align: center;
+    width: calc(var(--GAME-BOARD-SIZE) + 40px);
+    height: calc(var(--GAME-BOARD-SIZE) + 40px);
+    box-shadow: 0 0 5px var(--SHADOW-COLOR);
+    padding: 20px;
+    /* padding: 20px; */
+}
+.game-board div{
+    display: grid;
+    place-content: center;
+    font-size: 3rem;
+    font-weight: bold;
+}
+.block0, .block1, .block3, .block4{
+    border-bottom: 2px solid black;
+    border-right: 2px solid black;
+}
+.block2, .block5{
+    border-bottom: 2px solid black;
+}
+.block6, .block7{
+    border-right: 2px solid black;
+}
+
+footer{
+    text-align: center;
+}
+.end-screen{
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100vw;
+    height: 100vh;
+    padding: 20px;
+    border: 1px solid black;
+    background: rgba(0,0,0,0.2);
+}
+
+.msg-box{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 200px;
+    height: 200px;
+    padding: 20px;
+    background: black;
+}
+.restart{
+    appearance: none;
+    border: none;
+    background: none;
+
+    width: 100%;
+    background: whitesmoke;
+    height: 50px;
+
+    position: absolute;
+    transform: translateX(-50%);
+    border-radius: 5px;
+    bottom: 30px;
+
+}
+.creator{
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    padding: 10px;
+    color: var(--BACKGROUND-COLOR);
+    font-weight: bold;
+    color: black;
+}
